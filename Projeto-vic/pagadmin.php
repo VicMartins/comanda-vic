@@ -20,6 +20,7 @@
 
 
 <body>
+	<div class="container">
 	<div class="categoria">
 		<form method="post">
 	            <label for="categoria">Categoria:</label>
@@ -27,6 +28,17 @@
 	        <button class="btn btn-dark " type="submit" id="submit">Salvar  <i class="far fa-save"></i></button>
 		</form>
 	</div>
+	<div class="nomePrato">
+		<form method="post">
+	            <label for="nomePrato">Nome prato:</label>
+	         	<input type="text" class="form-control" placeholder="digite o nome do prato" id="nomePrato" name="nomePrato">
+				 <input type="text" class="form-control" placeholder="digite o valor do prato" id="valorPrato" name="valorPrato">
+				 <input type="text" class="form-control" placeholder="digite o tipo de prato" id="categoriaPrato" name="categoriaPrato">
+	        <button class="btn btn-dark " type="submit" id="submit">Salvar  <i class="far fa-save"></i></button>
+		</form>
+	</div>
+	</div>
+
 </body>
 </html>
 <?php
@@ -45,5 +57,22 @@
 		} else {
     		echo "Error: " . $userinsert . "<br>" . $mysqli->error;
 		}
+	}
+	if(!$mysql== true){
+		echo $mysqli->error;
+	}
+		if(isset($_POST['nomePrato'])) {
+		$nomePrato= $_POST['nomePrato'];
+		$valorPrato = $_POST['valorPrato'];
+		$categoriaPrato = $_POST['categoriaPrato'];
+
+		//mysql insert//
+		$catinsert= "INSERT INTO tb_produto VALUES (NULL,'$nomePrato',$valorPrato,$categoriaPrato)";
+		if ($mysql->query($catinsert) === TRUE) {
+			//header("location:index.php");
+		} else {
+    		echo "Error: " . $userinsert . "<br>" . $mysqli->error;
+		}
+		header("location:index.php");
 	}
 ?>

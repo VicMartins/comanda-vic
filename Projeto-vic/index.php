@@ -101,18 +101,18 @@ th{
                 </thead>
         
                 <tbody>
-                  <tr>
-                    <td>Suco</td>
-                    <td>$0.87</td>
-                  </tr>
-                  <tr>
-                    <td>Refrigerante</td>
-                    <td>$3.76</td>
-                  </tr>
-                  <tr>
-                    <td>Cerveja</td>
-                    <td>$7.00</td>
-                  </tr>
+                <?php
+              $prodselect = $mysql->query("SELECT nm_produto, vl_produto  FROM tb_produto WHERE cd_categoria_produto = 1 ");
+              while($cat = mysqli_fetch_array($prodselect))
+              {
+              ?>
+              <tr>
+                <td><p onclick=""><?php echo $cat['nm_produto'];?></p></td>
+                <td><?php echo $cat['vl_produto'];?></td>
+              </tr>
+              <?php
+              };
+              ?>
                 </tbody>
               </table>
             </div>
@@ -133,12 +133,12 @@ th{
         
                 <tbody>
                 <?php
-              $prodselect = $mysql->query("SELECT * FROM tb_produtos WHERE cd_categoria_produto");
+              $prodselect = $mysql->query("SELECT nm_produto, vl_produto  FROM tb_produto WHERE cd_categoria_produto = 3 ");
               while($cat = mysqli_fetch_array($prodselect))
               {
               ?>
               <tr>
-                <td><?php echo $cat['nm_produto'];?></td>
+                <td><p onclick=""><?php echo $cat['nm_produto'];?></p></td>
                 <td><?php echo $cat['vl_produto'];?></td>
               </tr>
               <?php
@@ -218,26 +218,18 @@ th{
                   </tr>
                 </thead>       
                 <tbody>
-                  <tr>
-                    <td>Alvin</td>
-                    <td>$0.87</td>
-                  </tr>
-                  <tr>
-                    <td>Alan</td>
-                    <td>$3.76</td>
-                  </tr>
-                  <tr>
-                    <td>Jonathan</td>
-                    <td>$7.00</td>
-                  </tr>
-                  <tr>
-                    <td>Jonathan</td>
-                    <td>$7.00</td>
-                  </tr>
-                  <tr>
-                    <td>Jonathan</td>
-                    <td>$7.00</td>
-                  </tr>
+                <?php
+              $prodselect = $mysql->query("SELECT nm_produto, vl_produto  FROM tb_produto WHERE cd_categoria_produto = 4 ");
+              while($cat = mysqli_fetch_array($prodselect))
+              {
+              ?>
+              <tr>
+                <td><p onclick=""><?php echo $cat['nm_produto'];?></p></td>
+                <td><?php echo $cat['vl_produto'];?></td>
+              </tr>
+              <?php
+              };
+              ?>
                 </tbody>
               </table>
             </div>
@@ -257,18 +249,18 @@ th{
                 </thead>
         
                 <tbody>
-                  <tr>
-                    <td>Alvin</td>
-                    <td>$0.87</td>
-                  </tr>
-                  <tr>
-                    <td>Alan</td>
-                    <td>$3.76</td>
-                  </tr>
-                  <tr>
-                    <td>Jonathan</td>
-                    <td>$7.00</td>
-                  </tr>
+                <?php
+              $prodselect = $mysql->query("SELECT nm_produto, vl_produto  FROM tb_produto WHERE cd_categoria_produto = 2 ");
+              while($cat = mysqli_fetch_array($prodselect))
+              {
+              ?>
+              <tr>
+                <td><p onclick=""><?php echo $cat['nm_produto'];?></p></td>
+                <td><?php echo $cat['vl_produto'];?></td>
+              </tr>
+              <?php
+              };
+              ?>
                 </tbody>
               </table>
             </div>
